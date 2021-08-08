@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ResilienceHTTPClinetwithPolly.DataClientService;
 
 namespace ResilienceHTTPClinetwithPolly.Controllers
 {
@@ -11,22 +12,21 @@ namespace ResilienceHTTPClinetwithPolly.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
 
+        private readonly string sampleurl = "http://sampleaddres.com/sampleservice";
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IDataClient _dataClient;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger,IDataClient dataClient)
         {
             _logger = logger;
+            _dataClient = dataClient;
         }
 
         [HttpGet]
-        public string[] Get()
+        public async Task<List<SampleData>> Get()
         {
-            return Summaries;
+            return await _dataClient.GetSampleData(sampleurl);
         }
     }
 }
