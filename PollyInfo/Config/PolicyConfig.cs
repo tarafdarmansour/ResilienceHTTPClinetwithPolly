@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ResilienceHTTPClinetwithPolly.Config
+namespace ResilienceHTTPClinetwithPolly.PollyInfo.Config
 {
     public class PolicyConfig : ICircuitBreakerPolicyConfig, IRetryPolicyConfig
     {
