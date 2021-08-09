@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResilienceHTTPClinetwithPolly", "ResilienceHTTPClinetwithPolly.csproj", "{B46ACE59-7333-430D-AF20-0312ED06A304}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResilienceHTTPClinetwithPolly", "ResilienceHTTPClinetwithPolly\ResilienceHTTPClinetwithPolly.csproj", "{B46ACE59-7333-430D-AF20-0312ED06A304}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestingServer", "TestingServer\TestingServer.csproj", "{7F932D25-16E0-4A9F-B58E-FD20ADEA5A55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataModel\DataModel.csproj", "{9CE6B6DD-9136-4305-8E0C-7BBF82DB10DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{B46ACE59-7333-430D-AF20-0312ED06A304}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B46ACE59-7333-430D-AF20-0312ED06A304}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B46ACE59-7333-430D-AF20-0312ED06A304}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F932D25-16E0-4A9F-B58E-FD20ADEA5A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F932D25-16E0-4A9F-B58E-FD20ADEA5A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F932D25-16E0-4A9F-B58E-FD20ADEA5A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F932D25-16E0-4A9F-B58E-FD20ADEA5A55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CE6B6DD-9136-4305-8E0C-7BBF82DB10DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE6B6DD-9136-4305-8E0C-7BBF82DB10DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE6B6DD-9136-4305-8E0C-7BBF82DB10DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE6B6DD-9136-4305-8E0C-7BBF82DB10DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

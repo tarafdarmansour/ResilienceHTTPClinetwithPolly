@@ -15,6 +15,8 @@ namespace ResilienceHTTPClinetwithPolly.PollyInfo.Policies
         public static AsyncCircuitBreakerPolicy<HttpResponseMessage> GetHttpCircuitBreakerPolicy(ILogger logger, ICircuitBreakerPolicyConfig circuitBreakerPolicyConfig)
         {
             return HttpPolicyBuilders.GetBaseBuilder()
+                    .OrResult(r => !r.IsSuccessStatusCode)
+                    .Or<HttpRequestException>()
                      .CircuitBreakerAsync(circuitBreakerPolicyConfig.RetryCount + 1,
                         TimeSpan.FromSeconds(circuitBreakerPolicyConfig.BreakDuration),
                         (result, breakDuration) =>

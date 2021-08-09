@@ -15,6 +15,8 @@ namespace ResilienceHTTPClinetwithPolly.PollyInfo.Policies
         public static AsyncRetryPolicy<HttpResponseMessage> GetHttpRetryPolicy(ILogger logger, IRetryPolicyConfig retryPolicyConfig)
         {
             return HttpPolicyBuilders.GetBaseBuilder()
+                    .OrResult(r => !r.IsSuccessStatusCode)
+                    .Or<HttpRequestException>()
                      .WaitAndRetryAsync(retryPolicyConfig.RetryCount,
                         ComputeDuration,
                         (result, timeSpan, retryCount, context) =>
